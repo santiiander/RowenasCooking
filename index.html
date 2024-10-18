@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rowena's Budines Artesanales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="shortcut icon" href="recursos/PIZCA.png" type="image/x-icon">
+</head>
+<body class="loading">
+    <div id="loading-screen">
+        <div class="cupcake">
+            <div class="cupcake-body"></div>
+            <div class="cupcake-frosting"></div>
+            <div class="cupcake-cherry"></div>
+        </div>
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <header class="sticky-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="recursos/PIZCA.png" alt="Rowena's Budines Logo" class="logo">
+                <h1>Rowena's Budines Artesanales</h1>
+                <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="carrito-container">
+                <a href="#" id="carrito-icon">
+                    🛒
+                    <span id="carrito-contador" class="carrito-contador">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <h2 class="animate__animated animate__fadeInDown">Descubre el Sabor de la Artesanía</h2>
+            <p class="animate__animated animate__fadeInUp" style="color: black;">Budines hechos con amor y los mejores ingredientes</p>
+            <a href="#productos" class="cta-button animate__animated animate__bounceIn">Ver Productos</a>
+        </section>
+
+        <section id="productos">
+            <h2>Nuestros Budines</h2>
+            <div class="productos-grid" id="productos-container">
+                <!-- Products will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <div id="carrito-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Tu Carrito</h2>
+                <ul id="lista-carrito"></ul>
+                <p>Total: $<span id="total-carrito">0</span></p>
+                <button id="consultar-pedido" class="star-button">
+                    Realizar Pedido
+                    <div class="star-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                        </svg>
+                    </div>
+                    <div class="star-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                        </svg>
+                    </div>
+                    <div class="star-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                        </svg>
+                    </div>
+                    <div class="star-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                        </svg>
+                    </div>
+                    <div class="star-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                        </svg>
+                    </div>
+                    <div class="star-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 784.11 815.53" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"></path>
+                        </svg>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <section id="sobre-nosotros">
+            <h2>Sobre Nosotros</h2>
+            <div class="sobre-nosotros-content">
+                <img src="recursos/about-us-image.jpg" alt="Nuestro equipo" class="about-image">
+                <p>En Rowena's Budines Artesanales, nos apasiona crear los budines más deliciosos y únicos. Cada uno de nuestros productos está hecho con amor y los mejores ingredientes, para brindarte una experiencia inolvidable en cada bocado.</p>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <div class="contacto-content">
+                <div class="contacto-info">
+                    <p>¿Tienes alguna pregunta o pedido especial? ¡No dudes en contactarnos!</p>
+                    <p><strong>WhatsApp:</strong> +54 9 3472 54-9686</p>
+                    <p><strong>Email:</strong> rowena@budinesartesanales.com</p>
+                </div>
+                <form id="contacto-form">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="recursos/PIZCA.png" alt="Rowena's Budines Logo" class="logo">
+                <h3>Rowena's Budines Artesanales</h3>
+            </div>
+            <div class="footer-links">
+                <a href="#productos">Productos</a>
+                <a href="#sobre-nosotros">Sobre Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" class="social-icon">Facebook</a>
+                <a href="#" class="social-icon">Instagram</a>
+                <a href="#" class="social-icon">Twitter</a>
+            </div>
+        </div>
+        <p>&copy; 2024 Rowena's Budines Artesanales. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <div id="order-animation" class="order-animation hidden">
+        <div class="animation-content">
+            <div class="cupcake">
+                <div class="cupcake-body"></div>
+                <div class="cupcake-frosting"></div>
+                <div class="cupcake-cherry"></div>
+            </div>
+            <p id="animation-message">Consiguiendo ingredientes...</p>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

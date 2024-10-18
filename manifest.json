@@ -1,0 +1,21 @@
+{
+    "name": "Rowena's Budines Artesanales",
+    "short_name": "Rowena's",
+    "description": "Descubre el sabor de la artesanía con nuestros deliciosos budines",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#FFECF2",
+    "theme_color": "#FFD1DC",
+    "icons": [
+      {
+        "src": "/recursos/PIZCA.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "/recursos/PIZCA.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
