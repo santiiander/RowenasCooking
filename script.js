@@ -170,12 +170,15 @@ function displayProducts(products) {
 
         const imagenUrl = `Productos/${nombreImagen}`;
 
+        const buttonText = precio === '0' ? 'Próximamente' : 'Agregar al Carrito';
+        const buttonClass = precio === '0' ? 'agregar-carrito disabled' : 'agregar-carrito';
+
         productDiv.innerHTML = `
             <img src="${imagenUrl}" alt="${nombre}" class="producto-imagen" onerror="this.onerror=null; this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(nombre)}'">
             <h3>${nombre}</h3>
             <p class="descripcion">${descripcion}</p>
             <p class="precio">$${precio}</p>
-            <button class="agregar-carrito">Agregar al Carrito</button>
+            <button class="${buttonClass}">${buttonText}</button>
         `;
 
         productosContainer.appendChild(productDiv);
@@ -193,6 +196,11 @@ function agregarAlCarrito(evento) {
     const id = producto.dataset.id;
     const nombre = producto.dataset.nombre;
     const precio = parseFloat(producto.dataset.precio);
+
+    if (precio === 0) {
+        mostrarNotificacion("Próximamente podrás adquirir este producto", "info");
+        return;
+    }
 
     const productoEnCarrito = carrito.find(item => item.id === id);
 

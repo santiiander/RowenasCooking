@@ -832,3 +832,13 @@ body:not(.loading) #loading-screen {
 .install-button:hover {
 background-color: var(--color-primary);
 }
+
+.agregar-carrito.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.agregar-carrito.disabled:hover {
+    background-color: #ccc;
+    transform: none;
+}
