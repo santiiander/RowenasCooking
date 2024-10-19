@@ -297,7 +297,7 @@ function consultarPedido() {
     mensaje += 'Me gustaría saber los medios de pago y tiempo, así mismo envío y otros detalles!';
 
     const whatsappLink = `https://wa.me/5493472549686?text=${encodeURIComponent(mensaje)}`;
-    window.location.href = whatsappLink;
+    window.open(whatsappLink, '_blank');
 }
 
 function mostrarNotificacion(mensaje, tipo = 'success') {
