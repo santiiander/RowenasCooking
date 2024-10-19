@@ -286,41 +286,6 @@ function consultarPedido() {
         return;
     }
 
-    const orderAnimation = document.getElementById('order-animation');
-    const animationMessage = document.getElementById('animation-message');
-    const progressBar = orderAnimation.querySelector('.progress');
-    
-    orderAnimation.classList.remove('hidden');
-    
-    const messages = [
-        'Consiguiendo ingredientes...',
-        'Mezclando el chocolate...',
-        'Momento de cocción...',
-        'Añadiendo el toque final...',
-        'Pedido realizado! ⭐'
-    ];
-
-    let currentStep = 0;
-    const totalSteps = messages.length;
-    const stepDuration = 1000; // 5 segundos en total, dividido en 5 pasos
-
-    function updateAnimation() {
-        if (currentStep < totalSteps) {
-            animationMessage.textContent = messages[currentStep];
-            progressBar.style.width = `${(currentStep + 1) * (100 / totalSteps)}%`;
-            currentStep++;
-            setTimeout(updateAnimation, stepDuration);
-        } else {
-            // Animación completada, proceder con el envío del pedido
-            orderAnimation.classList.add('hidden');
-            enviarPedidoWhatsApp();
-        }
-    }
-
-    updateAnimation();
-}
-
-function enviarPedidoWhatsApp() {
     let mensaje = '¡Hola! En mi carrito tengo los siguientes productos:\n\n';
 
     carrito.forEach(item => {
@@ -332,9 +297,7 @@ function enviarPedidoWhatsApp() {
     mensaje += 'Me gustaría saber los medios de pago y tiempo, así mismo envío y otros detalles!';
 
     const whatsappLink = `https://wa.me/5493472549686?text=${encodeURIComponent(mensaje)}`;
-    window.open(whatsappLink, '_blank');
-
-    mostrarNotificacion('Pedido enviado correctamente', 'success');
+    window.location.href = whatsappLink;
 }
 
 function mostrarNotificacion(mensaje, tipo = 'success') {
